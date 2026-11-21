@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111827" />
+  <title>OSz 4.1 — Desktop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="desktop" class="desktop os-custom">
+    <div class="wallpaper-shape shape-one"></div><div class="wallpaper-shape shape-two"></div>
+    <header id="topbar" class="topbar">
+      <div class="top-left"><button class="brand-button" id="brandButton">✦ <span>OSz</span></button><span class="top-divider"></span><span id="osLabel">Custom OS</span></div>
+      <div class="top-center" id="topDate"></div>
+      <div class="top-right"><span class="status-dot"></span><span id="profileLabel">Guest</span><button class="icon-button notification-trigger" id="notificationButton" title="Notifications">♢<span id="notificationCount" class="notification-count hidden">0</span></button><button class="icon-button" id="quickSettings" title="Quick settings">☷</button><span id="clock">9:41</span></div>
+    </header>
+
+    <section class="desktop-widgets" aria-label="Desktop widgets">
+      <div class="widget-clock"><span id="widgetDay">MONDAY</span><strong id="widgetTime">09:41</strong><small id="widgetDate">November 20</small></div>
+      <div class="widget-note"><span>✦ QUICK NOTE</span><p id="widgetNote">Your ideas live here.</p><button id="editWidgetNote">Edit note ↗</button></div>
+    </section>
+    <section class="desktop-icons" id="desktopIcons" aria-label="Desktop apps">
+      <button class="desktop-icon" data-app="files"><span class="app-glyph glyph-folder">▰</span><span>Files</span></button>
+      <button class="desktop-icon" data-app="browser"><span class="app-glyph glyph-browser">◉</span><span>Browser</span></button>
+      <button class="desktop-icon" data-app="notes"><span class="app-glyph glyph-notes">▤</span><span>Notes</span></button>
+      <button class="desktop-icon" data-app="settings"><span class="app-glyph glyph-settings">⚙</span><span>Settings</span></button>
+      <button class="desktop-icon" data-app="calculator"><span class="app-glyph glyph-calc">＋</span><span>Calculator</span></button>
+      <button class="desktop-icon" data-app="store"><span class="app-glyph">▦</span><span>App Store</span></button>
+      <button class="desktop-icon" data-app="calendar"><span class="app-glyph">▦</span><span>Calendar</span></button>
+      <button class="desktop-icon" data-app="paint"><span class="app-glyph">▧</span><span>Paint Studio</span></button>
+    </section>
+
+    <section id="windowLayer" class="window-layer"></section>
+
+    <div id="startMenu" class="start-menu glass hidden">
+      <div class="start-search"><span>⌕</span><input id="appSearch" placeholder="Search apps, settings and files" /></div>
+      <div class="start-heading"><span>Pinned</span><button class="subtle-button" id="allApps">All apps ↗</button></div>
+      <div class="pinned-grid" id="pinnedGrid"></div>
+      <div class="start-heading"><span>Recommended</span><span class="muted">Recently used</span></div>
+      <button class="recommend-row" data-app="notes"><span class="mini-glyph glyph-notes">▤</span><span><b>Notes</b><small>Pick up where you left off</small></span><span class="row-arrow">›</span></button>
+      <button class="recommend-row" data-app="browser"><span class="mini-glyph glyph-browser">◉</span><span><b>Browser</b><small>Your saved websites</small></span><span class="row-arrow">›</span></button>
+      <div class="start-footer"><span class="user-avatar" id="startAvatar">G</span><b id="startUser">Guest</b><button class="power-button" id="powerButton" title="Close start menu">⏻</button></div>
+    </div>
+
+    <aside id="notificationPanel" class="notification-panel glass hidden"><div class="panel-head"><b>Notifications</b><button class="subtle-button" id="clearNotifications">Clear all</button></div><div id="notificationList" class="notification-list"></div></aside>
+
+    <aside id="quickPanel" class="quick-panel glass hidden">
+      <div class="panel-head"><b>Control center</b><button class="icon-button" id="closeQuick">×</button></div>
+      <div class="quick-toggles"><button class="toggle-chip active">◐<span>Wi-Fi</span></button><button class="toggle-chip active">⌁<span>Bluetooth</span></button><button class="toggle-chip">◉<span>Focus</span></button><button class="toggle-chip active">☼<span>Night light</span></button></div>
+      <div class="brightness"><span>☼</span><input type="range" min="20" max="100" value="85" id="brightnessRange"></div>
+      <div class="panel-foot"><span>Battery · 100%</span><button class="subtle-button" data-app="settings">All settings ↗</button></div>
+    </aside>
+
+    <nav id="taskbar" class="taskbar">
+      <button id="startButton" class="start-button" title="Start menu"><span class="start-logo">✦</span></button>
+      <div id="taskApps" class="task-apps"></div>
+      <div class="task-tray"><button class="tray-button" id="trayButton">⌃</button><span>◖</span><span>⌁</span><span>▣</span></div>
+    </nav>
+    <div id="toast" class="toast"></div>
+    <div id="bootScreen" class="boot-screen"><div class="boot-logo">✦</div><div class="boot-name">OSz</div><div class="boot-track"><i></i></div><small>Preparing your desktop</small></div>
+    <div id="loginScreen" class="login-screen hidden"><div class="login-card"><div class="login-logo">✦</div><div class="eyebrow">OSz 4.1</div><h1>Welcome back</h1><p>Choose a profile to enter your desktop.</p><div id="loginProfiles" class="login-profiles"></div><input id="loginName" maxlength="24" placeholder="Create a profile name"/><button class="primary-btn" id="loginEnter">Enter desktop</button><small>Your workspace is saved locally on this device.</small></div></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
