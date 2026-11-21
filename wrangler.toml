@@ -1,0 +1,7 @@
+name = "osz-personal-proxy"
+main = "worker.js"
+compatibility_date = "2026-11-20"
+workers_dev = true
+
+# Configure the access token as a secret, not in this file:
+# npx wrangler secret put PX_ACCESS_TOKEN
